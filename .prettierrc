@@ -1,0 +1,23 @@
+{
+  "overrides": [
+    {
+      "files": "*.sol",
+      "options": {
+        "printWidth": 99,
+        "useTabs": false,
+        "singleQuote": false,
+        "bracketSpacing": true,
+        "explicitTypes": "always"
+      }
+    },
+    {
+      "files": "*.ts",
+      "options": {
+        "parser": "typescript",
+        "printWidth": 99,
+        "semi": true,
+        "singleQuote": false
+      }
+    }
+  ]
+}
