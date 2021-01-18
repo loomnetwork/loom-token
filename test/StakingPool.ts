@@ -259,7 +259,7 @@ describe("StakingPool", function () {
       await expect(contract.stake(amount, 0)).to.be.revertedWith("SP: staking disabled");
     });
 
-    it("Should allow a user to create a single stake for 2-weeks", async function () {
+    it("Should allow a user to create a single stake for 1 year", async function () {
       const stakeholderAddress = ownerAddress;
       const amount = ethers.BigNumber.from(500).mul(decimalAdj);
       await tokenContract.approve(contract.address, amount);
@@ -345,7 +345,7 @@ describe("StakingPool", function () {
         "SP: account has too many stakes"
       );
       await contract.setMaxStakesPerAccount(0); // disable the limit
-      contract.stake(stakes[2].amount, stakes[2].period);
+      await contract.stake(stakes[2].amount, stakes[2].period);
     });
 
     it("Should allow multiple users to stake", async function () {
